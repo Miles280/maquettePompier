@@ -1,0 +1,170 @@
+:root {
+  /* Variables pour les couleurs et polices */
+  --baseColor: #ffffff; /* Couleur de base du texte */
+  --baseBgColor: #000000; /* Couleur de fond de base */
+  --titleBgColor: #102223; /* Couleur de fond des titres dans le main */
+  --sectionBgLight: #346264; /* Couleur de fond des sections (Galerie et Connectez-vous) */
+  --subtitleColor: #74a1a3; /* Couleur des sous-titres (ex : “publié le 15/01/13”) */
+  --paragraphColor: #97c2c5; /* Couleur des paragraphes dans les sections */
+  --linkLightGreen: #6df2fc; /* Couleur des liens vert très clair */
+  --fontFamily: "Roboto", sans-serif; /* Police de base pour toute la page */
+}
+
+* {
+  /* Reset de base */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Début du CSS imbriqué */
+  font-family: var(--fontFamily);
+  color: var(--baseColor);
+  background-color: var(--baseBgColor);
+
+  header {
+    /* Début du header */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url(./pictures/bg-featured-home.jpg);
+    padding: 150px;
+
+    img {
+      max-width: 100px;
+    }
+  }
+
+  main {
+    /* Début du main */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 10%;
+    padding-right: 10%;
+
+    section {
+      margin: 20px;
+
+      div {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      h2 {
+        font-size: medium;
+        padding: 10px;
+        padding-left: 25px;
+        background-color: var(--titleBgColor);
+      }
+
+      .article {
+        padding: 10px;
+        display: flex;
+        align-items: flex-start;
+
+        img {
+          max-width: 100px;
+          margin-right: 1em;
+        }
+
+        p {
+          color: var(--paragraphColor);
+          font-size: medium;
+          margin-top: 0.5em;
+          margin-bottom: 0.5em;
+        }
+
+        time {
+          font-size: small;
+        }
+
+        a {
+          color: var(--linkLightGreen);
+          font-size: small;
+        }
+
+        div {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+
+    #actu {
+      width: 60%;
+      div {
+        article {
+          max-width: 50%;
+        }
+      }
+    }
+
+    #une {
+      width: 30%;
+    }
+  }
+
+  #galerie {
+    width: 60%;
+    div {
+      justify-content: space-around;
+      padding: 1em;
+      background-color: var(--sectionBgLight);
+    }
+  }
+
+  #reseau {
+    width: 30%;
+    div {
+      background-color: var(--sectionBgLight);
+      display: flex;
+      justify-content: center;
+      padding: 1em;
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+
+        li {
+          a {
+            color: var(--baseColor);
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    /* Début du footer */
+    background-color: var(--titleBgColor);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    nav {
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+
+        li {
+          a {
+            color: var(--baseColor);
+            text-decoration: none;
+            font-size: 0.9rem;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}
