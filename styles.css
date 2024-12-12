@@ -23,14 +23,38 @@ body {
   color: var(--baseColor);
   background-color: var(--baseBgColor);
 
+  ul {
+    list-style: none;
+  }
+
   header {
     /* Début du header */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    background-image: radial-gradient(
+        circle at top right,
+        rgba(0, 0, 0, 1),
+        transparent 70%
+      ),
+      linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
       url(./pictures/bg-featured-home.jpg);
-    padding: 150px;
+    background-position: left;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 25em;
 
     img {
-      max-width: 100px;
+      padding: 4em;
+    }
+
+    div {
+      display: flex;
+      justify-content: flex-end;
+      h1 {
+        font-size: 2.2em;
+        max-width: 20em;
+        line-height: 1.2;
+        padding-right: 3em;
+      }
     }
   }
 
@@ -43,6 +67,7 @@ body {
     padding-right: 10%;
 
     section {
+      /* CSS qui touche toutes les sections */
       margin: 20px;
 
       div {
@@ -57,13 +82,12 @@ body {
         background-color: var(--titleBgColor);
       }
 
-      .article {
+      article {
         padding: 10px;
         display: flex;
         align-items: flex-start;
 
         img {
-          max-width: 100px;
           margin-right: 1em;
         }
 
@@ -82,16 +106,12 @@ body {
           color: var(--linkLightGreen);
           font-size: small;
         }
-
-        div {
-          display: flex;
-          flex-direction: column;
-        }
       }
     }
 
     #actu {
-      width: 60%;
+      /* Section Dernières actualités*/
+      width: 55%;
       div {
         article {
           max-width: 50%;
@@ -100,29 +120,39 @@ body {
     }
 
     #une {
-      width: 30%;
-    }
-  }
+      /* Section À la une */
+      width: 35%;
+      p {
+        font-size: 10px;
+      }
 
-  #galerie {
-    width: 60%;
-    div {
-      justify-content: space-around;
-      padding: 1em;
-      background-color: var(--sectionBgLight);
+      img {
+        height: 100px;
+      }
     }
-  }
 
-  #reseau {
-    width: 30%;
-    div {
-      background-color: var(--sectionBgLight);
-      display: flex;
-      justify-content: center;
-      padding: 1em;
+    #galerie {
+      /* Section Galerie */
+      width: 55%;
+      div {
+        justify-content: space-around;
+        padding: 1em;
+        background-color: var(--sectionBgLight);
+
+        img {
+          max-width: 30%;
+        }
+      }
+    }
+
+    #reseau {
+      /* Section Connectez-vous à nous */
+      width: 35%;
       ul {
-        list-style: none;
+        background-color: var(--sectionBgLight);
         display: flex;
+        justify-content: center;
+        padding: 1em;
         gap: 20px;
 
         li {
@@ -134,7 +164,6 @@ body {
       }
     }
   }
-
   footer {
     /* Début du footer */
     background-color: var(--titleBgColor);
@@ -145,7 +174,6 @@ body {
 
     nav {
       ul {
-        list-style: none;
         display: flex;
         gap: 20px;
 
@@ -165,6 +193,50 @@ body {
 
     p {
       font-size: 0.9rem;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  body {
+    header {
+      height: 28em;
+
+      img {
+        padding: 2em;
+      }
+
+      div {
+        h1 {
+          font-size: 1.8em;
+          max-width: 10em;
+          line-height: 1.2;
+          padding-right: 2em;
+        }
+      }
+    }
+
+    main {
+      padding-left: 5%;
+      padding-right: 5%;
+      #actu {
+        /* Section Dernières actualités*/
+        width: 90%;
+      }
+      #une {
+        /* Section À la une */
+        width: 90%;
+      }
+
+      #galerie {
+        /* Section Galerie */
+        width: 90%;
+      }
+
+      #reseau {
+        /* Section Connectez-vous à nous */
+        width: 90%;
+      }
     }
   }
 }
