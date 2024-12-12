@@ -129,6 +129,9 @@ body {
       img {
         height: 100px;
       }
+      article {
+        align-items: center;
+      }
     }
 
     #galerie {
@@ -236,6 +239,28 @@ body {
       #reseau {
         /* Section Connectez-vous à nous */
         width: 90%;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    main {
+      #actu {
+        /* Section Dernières actualités*/
+        width: 100%;
+        div {
+          article {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+    footer {
+      flex-direction: column;
+      nav {
+        margin-bottom: 10px;
       }
     }
   }
